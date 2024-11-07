@@ -1,4 +1,5 @@
 import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -28,26 +29,29 @@ public class AplikasiKonversiSuhuFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        BgKonversi = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel1 = new javax.swing.JLabel();
+        LJudul = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         TSuhu = new javax.swing.JTextField();
         CbSkalaSuhu = new javax.swing.JComboBox<>();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jButton1 = new javax.swing.JButton();
+        Rb1 = new javax.swing.JRadioButton();
+        Rb2 = new javax.swing.JRadioButton();
+        Rb3 = new javax.swing.JRadioButton();
+        BKonversi = new javax.swing.JButton();
+        LHasil = new javax.swing.JLabel();
+        Rb4 = new javax.swing.JRadioButton();
+        THasil = new javax.swing.JTextField();
+        jSeparator2 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 51, 51));
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Aplikasi Konversi Suhu");
+        LJudul.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        LJudul.setForeground(new java.awt.Color(255, 255, 255));
+        LJudul.setText("Aplikasi Konversi Suhu");
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -63,15 +67,31 @@ public class AplikasiKonversiSuhuFrame extends javax.swing.JFrame {
         CbSkalaSuhu.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         CbSkalaSuhu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Celcius", "Fahrenheit", "Reamur", "Kelvin" }));
 
-        jRadioButton1.setText("Fahrenheit");
+        BgKonversi.add(Rb1);
+        Rb1.setText("Fahrenheit");
 
-        jRadioButton2.setText("Reamur");
+        BgKonversi.add(Rb2);
+        Rb2.setText("Reamur");
 
-        jRadioButton3.setText("Kelvin");
+        BgKonversi.add(Rb3);
+        Rb3.setText("Kelvin");
 
-        jRadioButton4.setText("Celcius");
+        BKonversi.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        BKonversi.setText("Konversi Suhu");
+        BKonversi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BKonversiActionPerformed(evt);
+            }
+        });
 
-        jButton1.setText("jButton1");
+        LHasil.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        LHasil.setForeground(new java.awt.Color(255, 255, 255));
+        LHasil.setText("Hasil Nilai Yang Di Konversi :");
+
+        BgKonversi.add(Rb4);
+        Rb4.setText("Celcius");
+
+        THasil.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -84,7 +104,7 @@ public class AplikasiKonversiSuhuFrame extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(145, 145, 145)
-                                .addComponent(jLabel1))
+                                .addComponent(LJudul))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(33, 33, 33)
                                 .addComponent(jLabel2)))
@@ -95,29 +115,33 @@ public class AplikasiKonversiSuhuFrame extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(TSuhu, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(CbSkalaSuhu, 0, 101, Short.MAX_VALUE))
+                                .addComponent(CbSkalaSuhu, 0, 105, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(10, 10, 10)
-                                        .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(Rb1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jRadioButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(Rb2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(63, 63, 63)
-                                        .addComponent(jRadioButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(Rb3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jRadioButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(16, 16, 16)))))
+                                        .addComponent(Rb4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
+                                .addComponent(BKonversi, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(LHasil)
+                                .addGap(18, 18, 18)
+                                .addComponent(THasil)))))
                 .addContainerGap())
+            .addComponent(jSeparator2)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(jLabel1)
+                .addComponent(LJudul)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -130,16 +154,22 @@ public class AplikasiKonversiSuhuFrame extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton2))
+                            .addComponent(Rb1)
+                            .addComponent(Rb2))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButton3)
-                            .addComponent(jRadioButton4)))
+                            .addComponent(Rb3)
+                            .addComponent(Rb4)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(199, Short.MAX_VALUE))
+                        .addGap(25, 25, 25)
+                        .addComponent(BKonversi, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LHasil)
+                    .addComponent(THasil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -162,6 +192,58 @@ public class AplikasiKonversiSuhuFrame extends javax.swing.JFrame {
         evt.consume();  // Membatasi input hanya angka dan titik
     }
     }//GEN-LAST:event_TSuhuKeyTyped
+
+    private void BKonversiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BKonversiActionPerformed
+        try {
+        // Mengambil nilai suhu dari input
+        double suhuInput = Double.parseDouble(TSuhu.getText());
+        double hasilKonversi = 0.0;
+        
+        // Menentukan konversi berdasarkan skala asal dan tujuan
+        String skalaAsal = CbSkalaSuhu.getSelectedItem().toString();
+        
+        // Cek pilihan skala tujuan di JRadioButton
+        if (skalaAsal.equals("Celcius")) {
+            if (Rb1.isSelected()) {
+                hasilKonversi = suhuInput * 9/5 + 32;  // Celcius ke Fahrenheit
+            } else if (Rb2.isSelected()) {
+                hasilKonversi = suhuInput * 4/5;       // Celcius ke Reamur
+            } else if (Rb3.isSelected()) {
+                hasilKonversi = suhuInput + 273.15;    // Celcius ke Kelvin
+            }
+        } else if (skalaAsal.equals("Fahrenheit")) {
+            if (Rb4.isSelected()) {
+                hasilKonversi = (suhuInput - 32) * 5/9;  // Fahrenheit ke Celcius
+            } else if (Rb2.isSelected()) {
+                hasilKonversi = (suhuInput - 32) * 4/9;  // Fahrenheit ke Reamur
+            } else if (Rb3.isSelected()) {
+                hasilKonversi = (suhuInput - 32) * 5/9 + 273.15;  // Fahrenheit ke Kelvin
+            }
+        } else if (skalaAsal.equals("Reamur")) {
+            if (Rb4.isSelected()) {
+                hasilKonversi = suhuInput * 5/4;  // Reamur ke Celcius
+            } else if (Rb1.isSelected()) {
+                hasilKonversi = suhuInput * 9/4 + 32;  // Reamur ke Fahrenheit
+            } else if (Rb3.isSelected()) {
+                hasilKonversi = suhuInput * 5/4 + 273.15;  // Reamur ke Kelvin
+            }
+        } else if (skalaAsal.equals("Kelvin")) {
+            if (Rb4.isSelected()) {
+                hasilKonversi = suhuInput - 273.15;  // Kelvin ke Celcius
+            } else if (Rb1.isSelected()) {
+                hasilKonversi = (suhuInput - 273.15) * 9/5 + 32;  // Kelvin ke Fahrenheit
+            } else if (Rb2.isSelected()) {
+                hasilKonversi = (suhuInput - 273.15) * 4/5;  // Kelvin ke Reamur
+            }
+        }
+        
+        // Menampilkan hasil konversi
+        THasil.setText("" + hasilKonversi);
+
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Masukkan angka yang valid!");
+    }
+    }//GEN-LAST:event_BKonversiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -199,17 +281,20 @@ public class AplikasiKonversiSuhuFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BKonversi;
+    private javax.swing.ButtonGroup BgKonversi;
     private javax.swing.JComboBox<String> CbSkalaSuhu;
+    private javax.swing.JLabel LHasil;
+    private javax.swing.JLabel LJudul;
+    private javax.swing.JRadioButton Rb1;
+    private javax.swing.JRadioButton Rb2;
+    private javax.swing.JRadioButton Rb3;
+    private javax.swing.JRadioButton Rb4;
+    private javax.swing.JTextField THasil;
     private javax.swing.JTextField TSuhu;
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     // End of variables declaration//GEN-END:variables
 }
